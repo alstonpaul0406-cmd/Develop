@@ -1,0 +1,87 @@
+****************
+Day1: 03-09-2025
+****************
+
+*************************
+Intro to Python & Setup
+*************************
+Intro to Python & Setup
+- Why Python for DevOps
+- Installing Python & IDEs (VSCode, PyCharm)
+- Writing your first script
+- Python REPL, .py files, script vs. interpreter mode
+
+
+Timing :
+1) 8 to 10 PM         =13 
+
+2) 8 to 10:30 PM IST = 7 
+
+*************************
+Software Installation :  Free of cost 
+*************************
+1) Standalone Python     -- Time consuming process
+	Software  -Python , python.org
+	Tools(IDE)   -Vscode  , Jupyter Notebook
+	Libs   - Predefined set of code 
+			We are going to reuse instead of recreating it.
+			
+	boto3 - Python libs to perform AWS task to automate
+	Numpy
+	pandas
+	matplotlib
+	seaborn 
+	
+https://www.python.org/
+https://code.visualstudio.com/download
+
+
+
+Please install the python first
+and then install the VS code 
+
+2) Distributed Python : Anaconda Software  -Easy
+	Combined One (s/w + IDE + libs) 
+https://www.anaconda.com/download/success
+
+IDE - Integrated Development Environment 
+
+3) Online Version Python 
+	Google Colab
+		Gmail + G-drive Access 
+https://colab.research.google.com/
+
+script or Program :
+	Collection of Commands  
+
+Python Script:
+Filename.py
+
+Problem Stmt:
+Write a program to add up two numbers and display the total as result on the screen.
+
+solution:
+a = 10
+b = 30
+total = a + b
+print(total)
+
+Execute:
+
+GUI Mode: 
+	ctrl + F5 
+
+CLI Mode:
+
+Interpreter(Python) 
+
+c:\> python <filename.py>
+
+Python Program Execution 
+
+Script (.py) --> Interpreter(.pyc + PVM) --> O/p 
+
+
+
+
+
