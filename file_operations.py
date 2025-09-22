@@ -1,4 +1,4 @@
-file_nmae = "first_script.py"
-file = open(file_nmae, 'r')
+file_name = "first_script.py"
+file = open(file_name, 'r')
 content = file.read()
 print(content)
