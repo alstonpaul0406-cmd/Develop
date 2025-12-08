@@ -1,0 +1,8 @@
+{
+  "httpMethod": "POST",
+  "path": "/todos",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"title\": \"Learn AWS Services\"}"
+}

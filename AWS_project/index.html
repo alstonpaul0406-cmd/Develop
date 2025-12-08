@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App Test</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 50px auto; padding: 20px; }
+        input, button { padding: 10px; margin: 5px; }
+        .todo { padding: 10px; border: 1px solid #ddd; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>Todo App Test</h1>
+    <div>
+        <input type="text" id="todoInput" placeholder="Enter todo title">
+        <button onclick="createTodo()">Add Todo</button>
+        <button onclick="getTodos()">Refresh</button>
+    </div>
+    <div id="todos"></div>
+
+    <script>
+        const API_URL = 'https://yu4ddtejm4.execute-api.us-east-1.amazonaws.com/dev';
+
+        async function getTodos() {
+            const response = await fetch(`${API_URL}/todos`);
+            const data = await response.json();
+            const todosDiv = document.getElementById('todos');
+            todosDiv.innerHTML = data.todos.map(todo => `
+                <div class="todo">
+                    ${todo.title} 
+                    <button onclick="deleteTodo('${todo.id}')">Delete</button>
+                </div>
+            `).join('');
+        }
+
+        async function createTodo() {
+            const title = document.getElementById('todoInput').value;
+            await fetch(`${API_URL}/todos`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({title})
+            });
+            document.getElementById('todoInput').value = '';
+            getTodos();
+        }
+
+        async function deleteTodo(id) {
+            await fetch(`${API_URL}/todos/${id}`, {method: 'DELETE'});
+            getTodos();
+        }
+
+        getTodos();
+    </script>
+</body>
+</html>
